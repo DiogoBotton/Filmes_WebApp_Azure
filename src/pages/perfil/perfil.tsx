@@ -22,7 +22,7 @@ const Perfil = () => {
   const [nome, setNome] = useState('');
   const [permissao, setPermissao] = useState('');
 
-  const url = 'http://localhost:5000/api/';
+  const url = 'https://filmesdb.azurewebsites.net/api/';
 
   const select = ['Administrador', 'Comum']
 
@@ -49,7 +49,7 @@ const Perfil = () => {
     //Altera o ID do usuário do token
     setIdUsuario(id)
 
-    fetch(`http://localhost:5000/api/Usuarios/${idUsuario}`, {
+    fetch(`https://filmesdb.azurewebsites.net/api/Usuarios/${idUsuario}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

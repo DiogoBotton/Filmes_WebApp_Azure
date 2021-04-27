@@ -37,7 +37,7 @@ function Filme() {
   }, []);
 
   const listarFilme = () => {
-    fetch('http://localhost:5000/api/filmes', {
+    fetch('https://filmesdb.azurewebsites.net/api/filmes', {
       method: 'GET',
       headers: {
         //Bearer authentication é o token authentication, um Schema para autenticação HTTP 
@@ -53,7 +53,7 @@ function Filme() {
   }
 
   const listarGenero = () => {
-    fetch('http://localhost:5000/api/generos', {
+    fetch('https://filmesdb.azurewebsites.net/api/generos', {
       method: 'GET',
       headers: {
         //Bearer authentication é o token authentication, um Schema para autenticação HTTP 
@@ -70,7 +70,7 @@ function Filme() {
 
   const remove = (id: number) => {
     if (window.confirm('Deseja excluir o Filme?')) {
-      fetch('http://localhost:5000/api/filmes/' + id, {
+      fetch('https://filmesdb.azurewebsites.net/api/filmes/' + id, {
         method: 'DELETE',
         headers: {
           authorization: 'Bearer ' + localStorage.getItem('token-usuario')
@@ -85,7 +85,7 @@ function Filme() {
   }
 
   const refresh = (id: number) => {
-    fetch('http://localhost:5000/api/filmes/' + id, {
+    fetch('http://https://filmesdb.azurewebsites.net/api/filmes/' + id, {
       method: 'GET',
       headers: {
         authorization: 'Bearer ' + localStorage.getItem('token-usuario')
@@ -107,7 +107,7 @@ function Filme() {
     };
 
     const method = (idFilme === 0 ? 'POST' : 'PUT');
-    const urlRequest = (idFilme === 0 ? 'http://localhost:5000/api/filmes' : 'http://localhost:5000/api/filmes/' + idFilme);
+    const urlRequest = (idFilme === 0 ? 'https://filmesdb.azurewebsites.net/api/filmes' : 'https://filmesdb.azurewebsites.net/api/filmes/' + idFilme);
 
     fetch(urlRequest, {
       method: method,

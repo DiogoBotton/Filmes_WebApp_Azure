@@ -14,7 +14,7 @@ function Cadastro() {
   const [nome, setNome] = useState('');
   const [permissao, setPermissao] = useState('');
 
-  const url = 'http://localhost:5000/api/';
+  const url = 'https://filmesdb.azurewebsites.net/api/';
 
   const select = ['Administrador', 'Comum']
 
@@ -58,7 +58,7 @@ function Cadastro() {
       body: JSON.stringify(login)
     }
 
-    fetch('http://localhost:5000/api/conta/login', init)
+    fetch('https://filmesdb.azurewebsites.net/api/conta/login', init)
       .then(resp => resp.json())
       .then(data => {
         // Verifica se a propriedade token é diferente de indefinida (se a propriedade existe no retorno do json)

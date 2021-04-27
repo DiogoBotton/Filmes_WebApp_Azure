@@ -55,7 +55,7 @@ function Generos() {
     console.log('idGenero' + idGenero)
 
     const method = idGenero === 0 ? 'POST' : 'PUT';
-    const url = idGenero === 0 ? 'http://localhost:5000/api/Generos' : `http://localhost:5000/api/Generos/${idGenero}`
+    const url = idGenero === 0 ? 'https://filmesdb.azurewebsites.net/api/Generos' : `https://filmesdb.azurewebsites.net/api/Generos/${idGenero}`
 
     // ATENÇÃO: Com Axios a atualização da lista só funciona dps que atualiza a página, com o Fetch atualiza em tempo real (mesmo com o método listar() no bloco then)
     fetch(url, {
