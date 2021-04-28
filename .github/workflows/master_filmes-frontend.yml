@@ -21,9 +21,6 @@ jobs:
       with:
         node-version: '14.x'
 
-      env: 
-        CI: ''
-
     - name: npm install, build, and test
       run: |
         npm install
@@ -40,6 +37,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
+      process.env.CI: false
       name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
